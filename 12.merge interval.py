@@ -27,6 +27,31 @@ class Solution:
                 n+=1
         return final_arry
 
+
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        intervals=sorted(intervals)
+        l=[intervals[0]]
+        if len(intervals)>1:
+            for i in range(1,len(intervals)):
+                if l[-1][1]>=intervals[i][0]:
+                    l[-1][1]=max(intervals[i][1], l[-1][1])
+                else:
+                    l.append(intervals[i])
+        return l
+
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        intervals.sort(key = lambda i : i[0])
+        output = [intervals[0]]
+
+        for start, end in intervals[1:]:
+            lastend = output[-1][1]
+            if start <= lastend:
+                output[-1][1] = max(lastend, end)
+            else:
+                output.append([start, end])
+        return output 
         
 
 class Solution:

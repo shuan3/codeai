@@ -14,7 +14,7 @@ TIER 1 — MUST DO (CORE)
 11. String to Integer (atoi)
 
 TIER 2 — ETL / PIPELINE STYLE
-12. Merge Intervals
+12. Merge Intervals --> compare to previous one then make default first one to the list first.
 13. Insert Interval
 14. Interval List Intersections
 15. Meeting Rooms II

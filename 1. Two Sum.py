@@ -1,4 +1,4 @@
-from type import List
+from typing import List
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         seen = {}
@@ -22,3 +22,16 @@ class Solution:
                     break
         return l
         
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        seen=dict()
+        l=[]
+        for i in range(len(nums)):
+            if target-nums[i] in seen:
+                l.append(seen[target-nums[i]])
+                l.append(i)
+                return sorted(l)
+            seen[nums[i]]=i
+
+        # return sorted(l)
